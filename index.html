@@ -1,63 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>فراعنكوش</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>فراعنكوش</title>
+<link rel="stylesheet" href="bootstrap.min.css">
+<style>
+.container { margin:70px auto;}
+</style>
 </head>
+
 <body>
-  
-<iframe width="420" height="345" src="https://www.youtube.com/embed/xUfOw6ooxQc?autoplay=1">
-</iframe>
-<!-- <div style="overflow:hidden;position: relative;"><iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"width="800" height="443" type="text/html" src="https://www.youtube.com/embed/xUfOw6ooxQc?autoplay=0&fs=0&iv_load_policy=3&showinfo=0&rel=0&cc_load_policy=0&start=0&end=0&origin=https://youtube-embed.com"></iframe><div style="position: absolute;bottom: 10px;left: 0;right: 0;margin-left: auto;margin-right: auto;color: #000;text-align: center;"><small style="line-height: 1.8;font-size: 0px;background: #fff;"> <a href="https://youtube-embed.com/">Youtube Embed Code</a> </small></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style></div><br /> -->
-<div id="yt-wrap">
-    <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
-    <div id="ytplayer"></div>
-</div>
-
+<div class="container">
+<h1>فراعنكوش</h1>
+<div class="jquery-script-ads" style="margin:50px auto;"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-2783044520727903";
+/* jQuery_demo */
+google_ad_slot = "2780937993";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="show_ads.js">
+</script></div>
+<!-- <a class="youtube btn btn-primary" href="http://www.youtube.com/watch?v=M7lc1UVf-VE">This is a link</a> -->
+<button class="youtube btn btn-primary" id="linkid" rel="xUfOw6ooxQc">اضغط مجرد تحميل الصفحه</button>
+<!-- <img class="youtube" rel="c-5WsFKlKDk" src="http://img.youtube.com/vi/c-5WsFKlKDk/1.jpg"> -->
+<script src="jquery-1.12.4.min.js"></script>
+<script src="bootstrap.min.js"></script>
+<script src="bootstrap.youtubemodal.js"></script>
 <script>
-    setInterval(function(){ 
-        location.reload(); 
-     }, 25000);
-  // 2. This code loads the IFrame Player API code asynchronously.
-  var tag = document.createElement('script');
-  tag.src = "https://www.youtube.com/player_api";
-  var firstScriptTag = document.getElementsByTagName('script')[0];
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-  // 3. This function creates an <iframe> (and YouTube player)
-  //    after the API code downloads.
-  var player;
-  function onYouTubePlayerAPIReady() {
-    player = new YT.Player('ytplayer', {
-      width: '100%',
-      height: '100%',
-      videoId: 'VIDEO_ID',
-      events: {
-        'onReady': onPlayerReady,
-        'onStateChange': onPlayerStateChange
-      }
+$(function () {
+        $(".youtube").YouTubeModal({width:480, height:320});
+        setInterval(function(){ 
+        // location.reload(); 
+        $(".youtube").click();
+     }, 45000);
     });
-  }
+</script>
+<script type="text/javascript">
 
-  // 4. The API will call this function when the video player is ready.
-  function onPlayerReady(event) {
-    event.target.playVideo();
-    player.mute(); // comment out if you don't want the auto played video muted
-  }
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
 
-  // 5. The API calls this function when the player's state changes.
-  //    The function indicates that when playing a video (state=1),
-  //    the player should play for six seconds and then stop.
-  function onPlayerStateChange(event) {
-    if (event.data == YT.PlayerState.ENDED) {
-      player.seekTo(0);
-      player.playVideo();
-    }
-  }
-  function stopVideo() {
-    player.stopVideo();
-  }
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  window.onload=function(){
+  setTimeout(() => {
+  // document.getElementById("linkid").click();
+    
+  }, 3000);
+};
+setInterval(function(){ 
+        // location.reload(); 
+     }, 25000);
 </script>
 </body>
 </html>
